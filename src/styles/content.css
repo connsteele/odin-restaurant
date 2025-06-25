@@ -19,13 +19,15 @@
     }
 
     img {
-        aspect-ratio: 1600px / 1066px;
-        height: 300px;
-        border-radius: .5rem;
+        aspect-ratio: 400px / 447px;
+        height: 200px;
         width: auto;
     }
 }
 
 .family {
-
+    aspect-ratio: 1600px / 1066px;
+    height: 300px;
+    border-radius: .5rem;
+    width: auto;
 }
