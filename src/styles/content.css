@@ -1,4 +1,6 @@
-#content {
+#home,
+#menu,
+#about {
     --side-margin: 200px;
     --side-padding: 2rem;
     display: flex;
@@ -17,8 +19,13 @@
     }
 
     img {
-        aspect-ratio: 400px / 447px;
-        height: 200px;
+        aspect-ratio: 1600px / 1066px;
+        height: 300px;
+        border-radius: .5rem;
         width: auto;
     }
+}
+
+.family {
+
 }

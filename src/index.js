@@ -1,33 +1,40 @@
-import "./styles/body.css";
-import "./styles/header.css";
-import "./styles/content.css";
-import logo from "./img/odin.png";
+import home from  "./home.js"
+import menu from "./menu.js"
+import about from "./about.js"
+
 
 console.log("Starting index.js");
 
-// Event handler for page load
-function loadContent(e) {
-    // Create elements for the page
-    const divContent = document.querySelector("#content");
-    const h2Welcome = document.createElement("h2");
-    const h3Statement = document.createElement("h3");
-    const imgLogo = document.createElement("img");
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
-    const p3 = document.createElement("p");
-
-    // Add content into elements
-    h2Welcome.innerText = "Welcome to Odin's!";
-    h3Statement.innerText = "Serving delicious meals and cold brews since 2025";
-    imgLogo.src = logo;
-    imgLogo.alt = "Odin's Spot Logo"
-    p1.innerText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est deserunt recusandae beatae, quod, id explicabo saepe voluptatem ea pariatur optio, odit molestias architecto sapiente aliquam rem iste quam? Eos, odit.";
-    p2.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolore culpa blanditiis rem porro aliquam voluptates hic, vero soluta. Ex, atque modi eveniet illo qui suscipit iusto? Expedita, iusto eos!";
-    p3.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aut doloremque nulla non consequatur. Ipsam, corrupti maxime adipisci deleniti dicta sint vitae culpa explicabo ipsa iste deserunt porro. Perferendis, itaque?";
-    
-    // Add new elements as children
-    divContent.append(h2Welcome, h3Statement, imgLogo, p1, p2, p3);
-
+// Delete all children from content div to prepare for tab switching
+function clearContent() {
+    const content = document.querySelector("#content");
+    if (content.children.length > 0) {
+        content.removeChild(content.firstElementChild);
+    }
 }
 
-window.addEventListener("load", loadContent);
+// Startup Event
+window.addEventListener("load", home);
+
+// Click Events
+document.addEventListener("click", (e) => {
+    switch (e.target.id) {
+        case "btn-home":
+            console.log("Loading home");
+            clearContent();
+            home();
+            break;
+        case "btn-menu":
+            clearContent();
+            menu();
+            console.log("Loading menu");
+            break;
+        case "btn-about":
+            clearContent();
+            about();
+            console.log("Loading about");
+            break;
+        default:
+            // Nothing
+    }
+});
