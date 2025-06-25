@@ -5,8 +5,15 @@ Fictional restaurant page
 npm install
 
 ## manual compile
-npx webpack
+`npm run build`
+will execute `npx webpack`
+
 
 ## running server
-npx webpack serve
+`npm run dev`
+will execute `npx webpack serve`
 visit: http://localhost:8080
+
+## deploy 
+`npm run deploy`
+will push dist subtree to gh-pages branch
