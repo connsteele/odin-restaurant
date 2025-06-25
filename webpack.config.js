@@ -20,6 +20,16 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                // for html image importing
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
+                // for js image importing
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+            },
         ],
     },
 };
